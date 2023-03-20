@@ -1,6 +1,8 @@
 # online-store
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2b4a10ef-eb68-4a9d-b3d0-5a673bb6473d/deploy-status)][(https://app.netlify.com/sites/online-store-ts/deploys](https://online-store-ts.netlify.app/))
+# Deploy: [Link](https://online-store-ts.netlify.app/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2b4a10ef-eb68-4a9d-b3d0-5a673bb6473d/deploy-status)](https://app.netlify.com/sites/online-store-ts/deploys)
 
 Project Description:
 
@@ -34,4 +36,6 @@ Design Requirements:
 The application features interactive elements, and the appearance and cursor state of these elements change upon interaction. Different styles are used for active and inactive states of elements, and smooth animations are included.
 
 Commit history reflects the development process of the application.
-Deploy: [Link](https://online-store-ts.netlify.app/)
+
+
+
