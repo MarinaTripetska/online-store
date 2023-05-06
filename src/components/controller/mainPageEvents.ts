@@ -109,7 +109,6 @@ export class MainPageEvent {
         }
       }
     });
-    // console.log(result);
     return result;
   }
   parseFilterData(str: string) {

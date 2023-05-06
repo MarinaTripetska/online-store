@@ -156,8 +156,7 @@ export class CartSummary {
 
     btnBuy.addEventListener('click', () => {
       const modalWindow = new ModalWindow().draw(() => {
-        // console.log('open modal window');
-      });
+           });
       totalCountEl.after(modalWindow);
     });
     if (this.openModal) {

@@ -5,15 +5,12 @@ import { RenderFilters } from '../../components/controller/renderAllFilters';
 import { Callback } from '../../types/Callbacks';
 import { FilterCollection, FiltersType, FilterOrRange, SortDirection } from '../../types/Filter';
 import { Product } from '../../types/Product';
-// import { FormData } from '../../components/controller/formData';
 import { FilterData } from '../../components/controller/filterData';
 import { Subheader } from '../../components/view/subheader/subheader';
 import { SubHeaderData } from '../../types/Subheader';
-// import { SubHeaderFormData } from '../../components/controller/subHeaderFormData';
 import { MainPageEvent } from '../../components/controller/mainPageEvents';
 import { parseRequestUrl } from '../../components/controller/parseRequestUrl';
 
-//test URL:    (later will be class to parse info from URL string)
 enum Url {
   base = 'https://dummyjson.com',
   goods = '/products?limit=30',
@@ -32,7 +29,6 @@ class MainPage extends TemplatePage {
 
   constructor(id: string) {
     super(id);
-    //test loader:
     this.loader = new Loader(Url);
     this.view = new Products();
     this.mainEvent = new MainPageEvent();
@@ -68,6 +64,7 @@ class MainPage extends TemplatePage {
         }
       }
     }
+
     if (urlParams.search !== undefined) {
       if (urlParams.search.filter !== undefined) {
         const strKey = urlParams.search.filter;
@@ -78,15 +75,11 @@ class MainPage extends TemplatePage {
     }
 
     //this.mainEvent
-
-    //const rawData = rawDataMoc;
     const thumb = this.createPageHTML(MainPage.textObject.mainThumb);
-
     const subHeadContainer = this.createPageHTML('sub-header-container');
     const mainContainer = this.createPageHTML('main-container');
 
     //data for render
-
     const dataProduct = new FilterData().facetedFilter(rawData, formData);
     const dataAfterSearch = new FilterData().getSearchedData(dataProduct, mocDataForSubHeader.searchData);
     const dataOnlyAfterSearch = new FilterData().getSearchedData(rawData, mocDataForSubHeader.searchData);
@@ -106,7 +99,6 @@ class MainPage extends TemplatePage {
       this.mainEvent.handlerEvent(filtersContainer, subHeadContainer, mainContainer);
     });
     const products = await this.createProductsCards(dataAfterSort);
-    // console.log(dataOnlyAfterSearch)
     //render search
     const subHeader = new Subheader().draw(mocDataForSubHeader, dataAfterSearch.length, () => {
       this.mainEvent.handlerEvent(filtersContainer, subHeadContainer, mainContainer);
@@ -115,7 +107,6 @@ class MainPage extends TemplatePage {
 
     mainContainer.append(filtersContainer, products);
     thumb.append(subHeadContainer, mainContainer);
-    //thumb.append(filtersContainer, products);
 
     this.container.append(thumb);
     return this.container;
@@ -135,10 +126,7 @@ class MainPage extends TemplatePage {
 
   renderSubHeader(parentNode: HTMLElement, mocDataForSubHeader: SubHeaderData, length: number, callback: Callback) {
     parentNode.innerHTML = '';
-    const subHeader = new Subheader().draw(mocDataForSubHeader, length, () => {
-      //callback()
-      //const sortSearchFromData = new SubHeaderFormData().getFormData();
-    });
+    const subHeader = new Subheader().draw(mocDataForSubHeader, length, () => {});
     parentNode.append(subHeader);
   }
 }

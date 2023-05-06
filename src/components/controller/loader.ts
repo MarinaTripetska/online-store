@@ -33,7 +33,7 @@ export class Loader {
 
     checkFlag() {
         if (!this.flag) {
-            console.log('Data hasn`t yet been recieved from the server');
+          
             throw new Error('Data hasn`t yet been recieved from the server');
         }
     }
