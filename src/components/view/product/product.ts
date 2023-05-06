@@ -2,8 +2,6 @@ import { Cart, Product as ProductType } from '../../../types';
 import { CartController } from '../../controller/cartController';
 import { clearSearchParams } from '../../controller/clearSearchParams';
 import { HeaderController } from '../../controller/headerController';
-import { parseRequestUrl } from '../../controller/parseRequestUrl';
-//TODO: add render count of added product to cart and maybe input for changing this number
 
 export class Product {
   protected productsThumb: HTMLElement;
@@ -68,17 +66,14 @@ export class Product {
       if (x > 0.01 * bigImage.width) {
         xPerc += 0.15 * xPerc;
       }
-
       // Add some margin for bottom edge
       if (y >= 0.01 * bigImage.height) {
         yPerc += 0.15 * yPerc;
       }
-
       // Set the background of the magnified image horizontal
       magnifyEl.style.backgroundPositionX = xPerc - 9 + '%';
       // Set the background of the magnified image vertical
       magnifyEl.style.backgroundPositionY = yPerc - 9 + '%';
-
       // Move the magnifying glass with the mouse movement.
       magnifyEl.style.left = x - magnifyEl.clientWidth / 2 + 'px';
       magnifyEl.style.top = y - magnifyEl.clientWidth / 2 + 'px';
@@ -147,12 +142,9 @@ export class Product {
     CartController.addProduct(data.id, data.price);
     HeaderController.changeViewOnCartAction();
 
-    //   const pathname = window.location.href; //this gives me current Url
     const url = new URL(window.location.href);
     window.localStorage.setItem('pageUrl', JSON.stringify(url));
     window.history.pushState(null, '', url.toString());
-    // window.history.go();
-    // // window.history.replaceState({ prevUrl: window.location.href }, '', url.toString());
   }
 
   public draw(): HTMLElement {

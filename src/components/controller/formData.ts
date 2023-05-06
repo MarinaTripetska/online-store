@@ -1,4 +1,4 @@
-import { RangeType, FilterCollection, FiltersType, MaxMin, MaxMinValue } from '../../types/Filter';
+import { FilterCollection, FiltersType, MaxMin, MaxMinValue } from '../../types/Filter';
 
 export class FormData {
   getFormData(entryDataKey: string) {

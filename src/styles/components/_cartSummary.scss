@@ -23,12 +23,6 @@
     flex-direction: column;
 
     gap: 10px;
-    // position: relative;
-  }
-
-  &-desc-thumb {
-    // position: absolute;
-    // top: -80px;
   }
 
   &-desc {
@@ -93,7 +87,6 @@
 
     font-size: 1.2rem;
     font-weight: 700;
-    // color: $text-second-color;
     color: #fff;
     background: $active-color;
     box-shadow: $box-shadow-active;

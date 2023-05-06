@@ -1,16 +1,12 @@
 import { Products } from '../../components/view/products';
 import { Loader } from '../../components/controller/loader';
 import { RenderFilters } from '../../components/controller/renderAllFilters';
-//
-// import { Callback } from '../../types/Callbacks';
 import { FilterCollection, FiltersType, FilterOrRange, SortDirection, SortType, MaxMinValue } from '../../types/Filter';
-// import { Product } from '../../types/Product';
 import { FormData } from '../../components/controller/formData';
 import { FilterData } from '../../components/controller/filterData';
 import { Subheader } from '../../components/view/subheader/subheader';
 import { SubHeaderData } from '../../types/Subheader';
 import { SubHeaderFormData } from '../../components/controller/subHeaderFormData';
-// import { parseRequestUrl } from '../controller/parseRequestUrl';
 
 enum Url {
   base = 'https://dummyjson.com',

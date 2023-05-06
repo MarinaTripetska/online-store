@@ -1,47 +1,43 @@
 import { Product } from '../../types/index';
-import { UrlApi, JsonProducts,  } from '../../types/Loader';
+import { UrlApi, JsonProducts } from '../../types/Loader';
 
 export class Loader {
-    rawArr: Product[] = [];
-    urlApi: UrlApi;
-    flag = false;
+  rawArr: Product[] = [];
+  urlApi: UrlApi;
+  flag = false;
 
-    constructor(url: UrlApi) {
-        this.urlApi = url;
+  constructor(url: UrlApi) {
+    this.urlApi = url;
+  }
+
+  async loadGoods() {
+    this.flag = false;
+    await fetch(`${this.urlApi.base}${this.urlApi.goods}`)
+      .then(this.errorHandler)
+      .then((responce) => responce.json())
+      .then((data: JsonProducts) => {
+        this.rawArr = data.products;
+        this.flag = true;
+      });
+  }
+
+  errorHandler(res: Response) {
+    if (!res.ok) {
+      if (res.status === 401 || res.status === 404)
+        console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
+      throw Error(res.statusText);
     }
+    return res;
+  }
 
-    async loadGoods() {
-        this.flag = false;
-        await fetch(`${this.urlApi.base}${this.urlApi.goods}`)
-            .then(this.errorHandler)
-            .then((responce) => responce.json())
-            .then((data: JsonProducts) => {
-                this.rawArr = data.products;
-                this.flag = true;
-               
-            });
+  checkFlag() {
+    if (!this.flag) {
+      throw new Error('Data hasn`t yet been recieved from the server');
     }
+  }
 
-    errorHandler(res: Response) {
-        if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
-                console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
-            throw Error(res.statusText);
-        }
-        return res;
-    }
-
-    checkFlag() {
-        if (!this.flag) {
-          
-            throw new Error('Data hasn`t yet been recieved from the server');
-        }
-    }
-
-    get rawData() {
-        this.checkFlag();
-        return this.rawArr;
-    }
-
-    
+  get rawData() {
+    this.checkFlag();
+    return this.rawArr;
+  }
 }

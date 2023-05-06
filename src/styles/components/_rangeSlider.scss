@@ -1,5 +1,3 @@
-/*----------Dual Slider----------*/
-
 .range {
   display: flex;
   flex-direction: column;
@@ -27,10 +25,7 @@
       background: inherit;
     }
 
-    // disable arrows in Input - type Number
-    /* Firefox */
     -moz-appearance: textfield;
-    /* Chrome, Safari, Edge, Opera */
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;

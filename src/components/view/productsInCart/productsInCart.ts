@@ -164,7 +164,7 @@ export class ProductsInCart {
 
     const nextPageBtnEl = <HTMLButtonElement>this.headerEl.querySelector('.cart__sub-page-btn-next');
     nextPageBtnEl.addEventListener('click', ProductsInCart.onPaginationChange);
-    //===================================================
+
     const products = await this.getProducts();
 
     if (products) {

@@ -1,5 +1,4 @@
 import { CartController } from '../../components/controller/cartController';
-import { CartSummary } from '../../components/view/cartSummary';
 import { ProductsInCart } from '../../components/view/productsInCart';
 import { Cart } from '../../types';
 import TemplatePage from '../templatePage/templatePage';

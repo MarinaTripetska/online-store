@@ -15,7 +15,6 @@ class ProductPage extends TemplatePage {
   constructor(pageName: string, productId: string | undefined) {
     super(pageName);
     this.productId = productId || null;
-    // this.view = new Product(this.productObj);
   }
 
   private async fetchProduct() {

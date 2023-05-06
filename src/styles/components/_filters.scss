@@ -6,8 +6,7 @@
   gap: 10px;
   min-width: 250px;
   max-width: 250px;
-  &__type {
-  }
+
   &__form {
     display: flex;
     flex-direction: column;
@@ -24,6 +23,7 @@
   flex-direction: column;
   gap: 10px;
   max-height: 500px;
+
   &__title {
     font-size: 1.2rem;
     line-height: 1rem;
@@ -51,7 +51,6 @@
       border-radius: 6px;
       background: #888;
     }
-    /* Handle on hover */
     &::-webkit-scrollbar-thumb:hover {
       background: #555;
     }
@@ -64,6 +63,7 @@
       color: #646259;
     }
   }
+
   &__label {
     cursor: pointer;
     display: flex;
@@ -86,19 +86,16 @@
     position: absolute;
     z-index: -1;
     opacity: 0;
-    /* стили при наведении курсора на checkbox */
+
     &:not(:disabled):not(:checked) + span:hover::before {
       border-color: #f1d627;
     }
-    /* стили для активного чекбокса (при нажатии на него) */
+
     &:not(:disabled):active + span::before {
       background-color: #f1d627;
       border-color: #646259;
     }
-    /* стили для чекбокса, находящегося в фокусе */
-    /* &:focus+span::before {
-          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-        } */
+
     &:checked + span::before {
       border-color: #646259;
       background-color: #f1d627;
@@ -115,7 +112,7 @@
       position: absolute;
       z-index: -1;
       opacity: 0;
-      /* стили для чекбокса, находящегося в состоянии disabled */
+
       &:disabled + span::before {
         background-color: #e9ecef;
       }

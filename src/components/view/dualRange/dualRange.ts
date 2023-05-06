@@ -24,7 +24,7 @@ export class DualRange {
     const max = maxMin.max.toString();
     let minValue = maxMin.minValue.toString();
     let maxValue = maxMin.maxValue.toString();
-    if(Number(minValue) === Number(maxValue)) {
+    if (Number(minValue) === Number(maxValue)) {
       minValue = min;
       maxValue = max;
     }
@@ -67,8 +67,8 @@ export class DualRange {
         ${this.sliderColor} ${(fromPosition / rangeDistance) * 100}%,
         ${this.sliderColor} 0%,
         ${this.rangeColor} ${(fromPosition / rangeDistance) * 100}%,
-        ${this.rangeColor} ${(toPosition / rangeDistance) * 100}%, 
-        ${this.sliderColor} ${(toPosition / rangeDistance) * 100}%, 
+        ${this.rangeColor} ${(toPosition / rangeDistance) * 100}%,
+        ${this.sliderColor} ${(toPosition / rangeDistance) * 100}%,
         ${this.sliderColor} 100%)`;
   }
 
@@ -100,7 +100,6 @@ export class DualRange {
     } else {
       sliderFrom.value = from.toString();
     }
-   
   }
 
   controlToInput(

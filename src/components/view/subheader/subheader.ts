@@ -1,7 +1,6 @@
 import { SubHeaderData } from '../../../types/Subheader';
 import { Callback } from '../../../types/Callbacks';
 import App from '../../../pages/app/app';
-import { clearSearchParams } from '../../controller/clearSearchParams'
 
 export class Subheader {
   draw(subHeaderData: SubHeaderData, length: number, callback: Callback) {
@@ -30,7 +29,6 @@ export class Subheader {
         const url = window.location.href;
         navigator.clipboard.writeText(url);
         btnCopy.textContent = 'Copied!';
-        //document.execCommand('copy');
       });
     }
 
@@ -39,15 +37,14 @@ export class Subheader {
       btnReset.addEventListener('click', () => {
         const baseUrl = window.location.origin + '/';
         window.history.pushState('object or string', 'Title', baseUrl);
-        // const resetSearchParam = clearSearchParams(new URL(window.location.href));
         const app = new App();
         app.run();
       });
     }
     const searchInput = <HTMLInputElement>subHeaderElem.querySelector('.subheader__search');
     if (searchInput) {
-      searchInput.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
+      searchInput.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
           event.preventDefault();
           callback();
         }

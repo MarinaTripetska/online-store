@@ -63,22 +63,18 @@
     padding-right: 7px;
     overflow-y: scroll;
 
-    /* width */
     &::-webkit-scrollbar {
       width: 5px;
     }
 
-    /* Track */
     &::-webkit-scrollbar-track {
       background: rgb(231, 231, 231);
     }
 
-    /* Handle */
     &::-webkit-scrollbar-thumb {
       background: rgb(176, 176, 176);
     }
 
-    /* Handle on hover */
     &::-webkit-scrollbar-thumb:hover {
       background: rgba(181, 181, 181, 0.208);
     }

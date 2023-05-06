@@ -12,15 +12,6 @@
     gap: 10px;
   }
 
-  &__btn {
-  }
-
-  &__sort-wrap {
-  }
-
-  &__sort {
-  }
-
   &__search-wrap {
     display: flex;
     justify-content: center;
@@ -31,10 +22,6 @@
 
   &__count {
     font-size: 1.3rem;
-    &_text {
-    }
-    &_item {
-    }
   }
 
   &__search {
@@ -53,6 +40,7 @@
     display: none;
   }
 }
+
 .btn {
   cursor: pointer;
   min-height: 34px;
@@ -69,6 +57,7 @@
     transition: all ease 0.4s;
   }
 }
+
 .sort-select {
   background: inherit;
   color: #5d5c5c;
@@ -82,15 +71,13 @@
   &:hover {
     cursor: pointer;
     background-color: #f1d627;
-    //color: #f1d627;
   }
+
   &:active {
     background: inherit;
   }
+
   &:focus {
     background-color: inherit;
-  }
-
-  &__option {
   }
 }
