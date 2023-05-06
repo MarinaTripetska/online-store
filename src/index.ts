@@ -1,19 +1,9 @@
 import './styles/index.scss';
 import './assets/icons/sprite.svg';
 import App from './pages/app';
+import { fixLocalStorageBug } from './components/controller/fixLocalStorageBug';
 
-function fixLocalStorageBug() {
-  const cart = localStorage.getItem('cart');
-  if(cart) {
-    const cartObj = JSON.parse(cart);
-    if(cartObj.discount !== undefined) {
-      console.log('OK');
-    } else {
-      localStorage.clear();
-    }
-  }
-}
-fixLocalStorageBug()
+fixLocalStorageBug();
 
 const app = new App();
 app.run();
